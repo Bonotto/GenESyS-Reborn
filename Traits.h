@@ -51,6 +51,9 @@
 #include "ProcessAnalyserMyImpl1.h"
 #include "ExperimentDesignMyImpl1.h"
 
+class FitterBonotto;
+class BuildBonottosModel;
+
 template <typename T>
 struct Traits {
 	static const bool debugged = true;
@@ -59,7 +62,8 @@ struct Traits {
 
 template <> struct Traits<GenesysApplication_if> {
 	//typedef TestInputAnalyserTools Application;  
-	typedef BuildSimpleModel1 Application;  
+	// typedef BuildSimpleModel1 Application;  
+	typedef BuildBonottosModel Application;
 };
 
 template <> struct Traits<Model> {
@@ -77,7 +81,8 @@ template <> struct Traits<Sampler_if> {
 };
 
 template <> struct Traits<Fitter_if> {
-	typedef FitterMyImpl1 Implementation;
+	// typedef FitterMyImpl1 Implementation;
+	typedef FitterBonotto Implementation;
 };
 
 template <> struct Traits<Collector_if> {
@@ -121,6 +126,9 @@ template <> struct Traits<ExperimentDesign_if> {
 template <> struct Traits<ProcessAnalyser_if> {
 	typedef ProcessAnalyserMyImpl1 Implementation;
 };
+
+#include "FitterBonotto.h"
+#include "BuildBonottosModel.h"
 
 #endif /* TRAITS_H */
 
