@@ -4,10 +4,12 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>ExperementDesign_BrunoBonotto_JoaoSouto.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>ExperementDesign_BrunoBonotto_JoaoSouto.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -241,6 +243,16 @@
       <item path="Event.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ExperementDesign_BrunoBonotto_JoaoSouto.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ExperementDesign_BrunoBonotto_JoaoSouto.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="ExperimentDesignMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -497,6 +509,16 @@
       <item path="Event.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ExperementDesign_BrunoBonotto_JoaoSouto.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="ExperementDesign_BrunoBonotto_JoaoSouto.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="ExperimentDesignMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>

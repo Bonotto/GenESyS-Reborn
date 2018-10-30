@@ -47,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Entity.o \
 	${OBJECTDIR}/EntityType.o \
 	${OBJECTDIR}/Event.o \
+	${OBJECTDIR}/ExperementDesign_BrunoBonotto_JoaoSouto.o \
 	${OBJECTDIR}/ExperimentDesignMyImpl1.o \
 	${OBJECTDIR}/FactorOrInteractionContribution.o \
 	${OBJECTDIR}/FitterJoaoSouto.o \
@@ -170,6 +171,11 @@ ${OBJECTDIR}/Event.o: Event.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Event.o Event.cpp
+
+${OBJECTDIR}/ExperementDesign_BrunoBonotto_JoaoSouto.o: ExperementDesign_BrunoBonotto_JoaoSouto.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ExperementDesign_BrunoBonotto_JoaoSouto.o ExperementDesign_BrunoBonotto_JoaoSouto.cpp
 
 ${OBJECTDIR}/ExperimentDesignMyImpl1.o: ExperimentDesignMyImpl1.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
