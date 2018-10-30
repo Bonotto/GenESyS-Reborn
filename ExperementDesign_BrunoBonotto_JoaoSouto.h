@@ -15,6 +15,7 @@
 #define EXPEREMENTDESIGN_BRUNOBONOTTO_JOAOSOUTO_H
 
 #include "ExperimentDesign_if.h"
+#include "Traits.h"
 
 class ExperementDesign_BrunoBonotto_JoaoSouto : public ExperimentDesign_if {
 public:
@@ -31,8 +32,11 @@ public:
 	std::list<FactorOrInteractionContribution*>* getContributions() const;
 
 private:
+	double responses_avg;
 	ProcessAnalyser_if* _processAnalyser = new Traits<ProcessAnalyser_if>::Implementation();
 	std::list<FactorOrInteractionContribution*>* _contributions = new std::list<FactorOrInteractionContribution*>();
+
+	std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>> create_table();
 
 };
 

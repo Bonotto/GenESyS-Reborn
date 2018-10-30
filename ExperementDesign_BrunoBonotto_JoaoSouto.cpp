@@ -12,8 +12,10 @@
  */
 
 #include "ExperementDesign_BrunoBonotto_JoaoSouto.h"
+#include "SimulationScenario.h"
 #include "Assign.h"
 #include <map>
+#include <set>
 
 
 ExperementDesign_BrunoBonotto_JoaoSouto::ExperementDesign_BrunoBonotto_JoaoSouto() {}
@@ -31,18 +33,23 @@ bool ExperementDesign_BrunoBonotto_JoaoSouto::generate2krScenarioExperiments() {
 
 ProcessAnalyser_if* ExperementDesign_BrunoBonotto_JoaoSouto::getProcessAnalyser() const { return _processAnalyser; }
 
-
 /*
+	Makes the n fatorial
 */
-
 int factorial(int n) {
 	return (n == 1 || n == 0) ? 1 : factorial(n - 1) * n;
 }
 
+/*
+	Makes the combination of n s to s
+*/
 int combination(int n, int s) {
 	return factorial(n) / (factorial(s) * factorial(n - s));
 }
 
+/*
+	Makes the sum of all combinations of n from 1 to n whitout repetition
+*/
 int total_combination(int n) {
 	int total = 0;
 
@@ -52,87 +59,104 @@ int total_combination(int n) {
 	return total;
 }
 
-bool ExperementDesign_BrunoBonotto_JoaoSouto::calculateContributionAndCoefficients()
+/*
+	Generates the table with all factors and their combinations
+*/
+std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>> ExperementDesign_BrunoBonotto_JoaoSouto::create_table()
 {
+	auto scenarios = _processAnalyser->getScenarios()->getList();
+	auto responses = _processAnalyser->getResponses()->getList();
 
-	// Passo 0	Contruir a tabela com os valores dos controles e respostas
+	std::map<SimulationControl*, std::map<double, double>> levels;
 
-	std::map<SimulationControl_if*, std::map<double, double>> levels;
-
-	for (auto scenario : _processAnalyser->getScenarios())
-		for (auto control : _processAnalyser->getControls())
+	for (auto scenario : *scenarios)
+		for (auto control : *_processAnalyser->getControls()->getList())
 			levels[control][scenario->getControlValue(control)] = 0;
 
 	for (auto l : levels) {
 		auto control = l.first;
 		auto it = l.second.begin();
 
-		levels[control][*it] = -1;
-		levels[control][*(it++)] = 1;
+		levels[control][it->first] = -1;
+		levels[control][(it++)->first] = 1;
 	}
 
 	//! Build combination
 	std::set<std::set<SimulationControl*>> sets;
 	int k = _processAnalyser->getControls()->size();
 
-	for (auto control : _processAnalyser->getControls())
+	for (auto control : *_processAnalyser->getControls()->getList())
 		sets.insert({control});
 
-	while (sets.size() != total_combination(k)) {
-
-		for (auto control : _processAnalyser->getControls())
+	while (sets.size() != total_combination(k))
+		for (auto control : *_processAnalyser->getControls()->getList())
 			for (std::set<SimulationControl*> set : sets) {
 				set.insert(control);
 				sets.insert(set);
 			}
-	}
 
 	std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>> table;
 
 	for (auto set : sets) {
 		auto combination = new FactorOrInteractionContribution(0, 0, new std::list<SimulationControl*>(set.begin(), set.end()));
-		_contributions.push_back(combination);
+		_contributions->push_back(combination);
 
-		for (auto scenario : _processAnalyser->getScenarios())
+		for (auto scenario : *scenarios) {
 			double x = 1;
 			for (auto control : set)
 				x *= levels[control][scenario->getControlValue(control)];
 
 			table[scenario][combination] = x;
+		}
 	}
 
-	// Passo 1	soma das respostas
-	double response_avg = 0;
+	return table;
+}
+
+/*
+	Calculates the contribution and coefficient to each factor
+*/
+bool ExperementDesign_BrunoBonotto_JoaoSouto::calculateContributionAndCoefficients()
+{
+	auto scenarios = _processAnalyser->getScenarios()->getList();
+	auto responses = _processAnalyser->getResponses()->getList();
+
+	auto table = create_table();
+
+	//! Calculate responses
 	std::map<SimulationScenario*, double> responses_sum;
-	for (auto scenario : _processAnalyser->getScenarios()) {
+	for (auto scenario : *scenarios) {
 		responses_sum[scenario] = 0;
-		for (auto response : _processAnalyser->getResponses())
+		for (auto response : *responses)
 			responses_sum[scenario] += scenario->getResponseValue(response);
 
-		response_avg += responses_sum[scenario];
+		responses_avg += responses_sum[scenario];
 	}
 
-	// Passo 2	respostas médias e média total
-	response_avg /= (_processAnalyser->getResponses() * _processAnalyser->getScenarios());
+	//! Calculates responses average
+	responses_avg /= (responses->size() * scenarios->size());
 
-	// Passo 3	diferenças entre o valor das respostas e a resposta média total
-	// Passo 4 quadrado das diferenças do passo anterior
-	// Passo 5	cálculo do SST
+	//! Calculates SST
 	double SST = 0;
-	for (auto scenario : _processAnalyser->getScenarios())
-		for (auto response : _processAnalyser->getResponses())
-			SST += pow(scenario->getResponseValue(response) - response_avg, 2);
-	
-	// Passo 6	calcular a soma dos efeitos
-	std::map<key, value> map;
-	for (auto combination : _contributions)
-		for (auto scenario : _processAnalyser->getScenarios())
+	for (auto scenario : *scenarios)
+		for (auto response : *responses)
+			SST += pow(scenario->getResponseValue(response) - responses_avg, 2);
 
-	// Passo 7	calcular a média dos efeitos 
-	// Passo 8	calcular o SS para cada iteração
-	// Passo 9	Calcular a contribuição de cada fator
-	// Passo 10	calcular o coeficiente do modelo de cada iteração
+	int k = _processAnalyser->getControls()->size();
 
+	//! Calculates the contribution and coefficient for each factor
+	for (auto combination : *_contributions) {
+		double coef = 0;
+		for (auto scenario : *scenarios)
+			coef += table[scenario][combination] * responses_sum[scenario];
+
+		double SS = pow(coef,2) / (pow(2,k) * responses->size());
+		double contribution = SS / SST;
+		coef /= (4 * pow(responses->size(), 2));
+        
+        auto list = combination->getControls();
+		*combination = FactorOrInteractionContribution(contribution, coef, new std::list<SimulationControl*>(list->begin(), list->end()));
+	}
 
     return true;
 }
