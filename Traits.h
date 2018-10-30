@@ -115,14 +115,18 @@ template <> struct Traits<ModelPersistence_if> {
 	typedef ModelPersistenceMyImpl1 Implementation;
 };
 
+class ExperementDesign_BrunoBonotto_JoaoSouto;
 template <> struct Traits<ExperimentDesign_if> {
-	typedef ExperimentDesignMyImpl1 Implementation;
+        typedef ExperementDesign_BrunoBonotto_JoaoSouto Implementation;
+        //typedef ExperimentDesignMyImpl1 Implementation;
 	//typedef ProcessAnalyserMyImpl1 ProcessAnalyserImplementation;
 };
 
 template <> struct Traits<ProcessAnalyser_if> {
 	typedef ProcessAnalyserMyImpl1 Implementation;
 };
+
+#include "ExperementDesign_BrunoBonotto_JoaoSouto.h"
 
 #endif /* TRAITS_H */
 
