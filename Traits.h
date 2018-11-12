@@ -36,6 +36,7 @@
 #include "SamplerMyImpl1.h"
 #include "Sampler_BruFabJoa.h"
 #include "FitterMyImpl1.h"
+//#include "FitterJoaoSouto.h"
 #include "ModelCheckerMyImpl1.h"
 #include "ParserMyImpl1.h"
 #include "IntegratorMyImpl1.h"
@@ -44,29 +45,24 @@
 //#include "HypothesisTesterDiogo.h"
 #include "ModelPersistenceMyImpl1.h"
 #include "StatisticsMyImpl1.h"
-#include "ModelChecker_DS2Karla.h"
 #include "StatisticsCancianImpl.h"
 #include "BuildSimpleModel1.h"
 #include "TestInputAnalyserTools.h"
 #include "ProcessAnalyserMyImpl1.h"
 #include "ExperimentDesignMyImpl1.h"
 
-class FitterBonotto;
-class BuildBonottosModel;
-
 template <typename T>
 struct Traits {
-	static const bool debugged = true;
-	static const Util::TraceLevel traceLevel = Util::TraceLevel::TL_mostDetailed; 
 };
 
 template <> struct Traits<GenesysApplication_if> {
 	//typedef TestInputAnalyserTools Application;  
-	// typedef BuildSimpleModel1 Application;  
-	typedef BuildBonottosModel Application;
+	typedef BuildSimpleModel1 Application;  
 };
 
 template <> struct Traits<Model> {
+	static const bool debugged = true;
+	static const Util::TraceLevel traceLevel = Util::TraceLevel::mostDetailed; 
 };
 
 template <> struct Traits<ModelComponent> {
@@ -81,8 +77,8 @@ template <> struct Traits<Sampler_if> {
 };
 
 template <> struct Traits<Fitter_if> {
-	// typedef FitterMyImpl1 Implementation;
-	typedef FitterBonotto Implementation;
+	typedef FitterMyImpl1 Implementation;
+    //typedef FitterJoaoSouto Implementation;
 };
 
 template <> struct Traits<Collector_if> {
@@ -92,7 +88,8 @@ template <> struct Traits<Collector_if> {
 };
 
 template <> struct Traits<ModelChecker_if> {
-	typedef ModelChecker_DS2Karla Implementation;
+	typedef ModelCheckerMyImpl1 Implementation;
+	//typedef ModelChecker_DS2Karla Implementation;
 };
 
 template <> struct Traits<Parser_if> {
@@ -126,9 +123,6 @@ template <> struct Traits<ExperimentDesign_if> {
 template <> struct Traits<ProcessAnalyser_if> {
 	typedef ProcessAnalyserMyImpl1 Implementation;
 };
-
-#include "FitterBonotto.h"
-#include "BuildBonottosModel.h"
 
 #endif /* TRAITS_H */
 

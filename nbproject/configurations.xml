@@ -65,15 +65,11 @@
         <itemPath>Collector_if.h</itemPath>
         <itemPath>HypothesisTesterMyImpl1.cpp</itemPath>
         <itemPath>HypothesisTesterMyImpl1.h</itemPath>
-        <itemPath>HypothesisTester_ar.cpp</itemPath>
-        <itemPath>HypothesisTester_ar.h</itemPath>
         <itemPath>HypothesisTester_if.h</itemPath>
         <itemPath>IntegratorDiogoImpl.cpp</itemPath>
         <itemPath>IntegratorDiogoImpl.h</itemPath>
         <itemPath>IntegratorMyImpl1.cpp</itemPath>
         <itemPath>IntegratorMyImpl1.h</itemPath>
-        <itemPath>Integrator_ar.cpp</itemPath>
-        <itemPath>Integrator_ar.h</itemPath>
         <itemPath>Integrator_if.h</itemPath>
         <itemPath>ProbDistrib.cpp</itemPath>
         <itemPath>ProbDistrib.h</itemPath>
@@ -89,8 +85,6 @@
       <itemPath>Model.h</itemPath>
       <itemPath>ModelCheckerMyImpl1.cpp</itemPath>
       <itemPath>ModelCheckerMyImpl1.h</itemPath>
-      <itemPath>ModelChecker_DS2Karla.cpp</itemPath>
-      <itemPath>ModelChecker_DS2Karla.h</itemPath>
       <itemPath>ModelChecker_if.h</itemPath>
       <itemPath>ModelComponent.cpp</itemPath>
       <itemPath>ModelComponent.h</itemPath>
@@ -112,10 +106,6 @@
       <itemPath>SourceModelComponent.cpp</itemPath>
       <itemPath>SourceModelComponent.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="f7" displayName="Not Used" projectFiles="true">
-      <itemPath>Listener.cpp</itemPath>
-      <itemPath>Listener.h</itemPath>
-    </logicalFolder>
     <logicalFolder name="f3" displayName="Parser" projectFiles="true">
       <itemPath>ParserMyImpl1.cpp</itemPath>
       <itemPath>ParserMyImpl1.h</itemPath>
@@ -129,8 +119,8 @@
                      projectFiles="true">
       </logicalFolder>
       <logicalFolder name="f1" displayName="Input Analyser" projectFiles="true">
-        <itemPath>FitterBonotto.cpp</itemPath>
-        <itemPath>FitterBonotto.h</itemPath>
+        <itemPath>FitterJoaoSouto.cpp</itemPath>
+        <itemPath>FitterJoaoSouto.h</itemPath>
         <itemPath>FitterMyImpl1.cpp</itemPath>
         <itemPath>FitterMyImpl1.h</itemPath>
         <itemPath>Fitter_if.h</itemPath>
@@ -161,8 +151,6 @@
     <logicalFolder name="f10"
                    displayName="User Program Interfaces"
                    projectFiles="true">
-      <itemPath>BuildBonottosModel.cpp</itemPath>
-      <itemPath>BuildBonottosModel.h</itemPath>
       <itemPath>BuildSimpleModel1.cpp</itemPath>
       <itemPath>BuildSimpleModel1.h</itemPath>
       <itemPath>GenesysApplication_if.h</itemPath>
@@ -173,6 +161,7 @@
       <itemPath>LinkedBy.cpp</itemPath>
       <itemPath>LinkedBy.h</itemPath>
       <itemPath>List.h</itemPath>
+      <itemPath>Listener.h</itemPath>
       <itemPath>Util.cpp</itemPath>
       <itemPath>Util.h</itemPath>
     </logicalFolder>
@@ -208,10 +197,6 @@
       <item path="Attribute.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Attribute.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="BuildBonottosModel.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="BuildBonottosModel.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BuildSimpleModel1.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -270,9 +255,9 @@
       </item>
       <item path="FactorOrInteractionContribution.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="FitterBonotto.cpp" ex="false" tool="1" flavor2="0">
+      <item path="FitterJoaoSouto.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="FitterBonotto.h" ex="false" tool="3" flavor2="0">
+      <item path="FitterJoaoSouto.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FitterMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -286,10 +271,6 @@
       </item>
       <item path="HypothesisTesterMyImpl1.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="HypothesisTester_ar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="HypothesisTester_ar.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="HypothesisTester_if.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="IntegratorDiogoImpl.cpp" ex="false" tool="1" flavor2="0">
@@ -300,10 +281,6 @@
       </item>
       <item path="IntegratorMyImpl1.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Integrator_ar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Integrator_ar.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Integrator_if.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LinkedBy.cpp" ex="false" tool="1" flavor2="0">
@@ -311,8 +288,6 @@
       <item path="LinkedBy.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="List.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Listener.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Listener.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -323,10 +298,6 @@
       <item path="ModelCheckerMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ModelCheckerMyImpl1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ModelChecker_DS2Karla.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ModelChecker_DS2Karla.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ModelChecker_if.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -483,10 +454,6 @@
       </item>
       <item path="Attribute.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="BuildBonottosModel.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="BuildBonottosModel.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="BuildSimpleModel1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BuildSimpleModel1.h" ex="false" tool="3" flavor2="0">
@@ -544,9 +511,9 @@
       </item>
       <item path="FactorOrInteractionContribution.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="FitterBonotto.cpp" ex="false" tool="1" flavor2="0">
+      <item path="FitterJoaoSouto.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="FitterBonotto.h" ex="false" tool="3" flavor2="0">
+      <item path="FitterJoaoSouto.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="FitterMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -560,10 +527,6 @@
       </item>
       <item path="HypothesisTesterMyImpl1.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="HypothesisTester_ar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="HypothesisTester_ar.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="HypothesisTester_if.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="IntegratorDiogoImpl.cpp" ex="false" tool="1" flavor2="0">
@@ -574,10 +537,6 @@
       </item>
       <item path="IntegratorMyImpl1.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Integrator_ar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Integrator_ar.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Integrator_if.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LinkedBy.cpp" ex="false" tool="1" flavor2="0">
@@ -585,8 +544,6 @@
       <item path="LinkedBy.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="List.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Listener.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Listener.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -597,10 +554,6 @@
       <item path="ModelCheckerMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ModelCheckerMyImpl1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ModelChecker_DS2Karla.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ModelChecker_DS2Karla.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ModelChecker_if.h" ex="false" tool="3" flavor2="0">
       </item>
