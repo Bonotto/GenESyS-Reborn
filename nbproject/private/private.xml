@@ -25,15 +25,9 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Assign.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Create.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/BuildSimpleModel1.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Release.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Seize.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Delay.cpp</file>
-            <file>file:/media/karla/Dados/Ciencia%20da%20Computação/INE5425%20-%20Modelagem%20e%20Simulação/DS2/GenESyS-Reborn/Model.cpp</file>
-        </group>
         <group name="Classes"/>
+        <group>
+            <file>file:/home/bonotto/Dropbox/Faculdade/2018-02/INE5425/GenESyS-Reborn/Simulator.cpp</file>
+        </group>
     </open-files>
 </project-private>

@@ -119,6 +119,8 @@
                      projectFiles="true">
       </logicalFolder>
       <logicalFolder name="f1" displayName="Input Analyser" projectFiles="true">
+        <itemPath>FitterBonotto.cpp</itemPath>
+        <itemPath>FitterBonotto.h</itemPath>
         <itemPath>FitterJoaoSouto.cpp</itemPath>
         <itemPath>FitterJoaoSouto.h</itemPath>
         <itemPath>FitterMyImpl1.cpp</itemPath>
@@ -151,6 +153,8 @@
     <logicalFolder name="f10"
                    displayName="User Program Interfaces"
                    projectFiles="true">
+      <itemPath>BuildBonottosModel.cpp</itemPath>
+      <itemPath>BuildBonottosModel.h</itemPath>
       <itemPath>BuildSimpleModel1.cpp</itemPath>
       <itemPath>BuildSimpleModel1.h</itemPath>
       <itemPath>GenesysApplication_if.h</itemPath>
@@ -176,6 +180,8 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>Integrator_ar.cpp</itemPath>
+    <itemPath>Integrator_ar.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -197,6 +203,10 @@
       <item path="Attribute.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Attribute.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BuildBonottosModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BuildBonottosModel.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BuildSimpleModel1.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -255,6 +265,10 @@
       </item>
       <item path="FactorOrInteractionContribution.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="FitterBonotto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FitterBonotto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FitterJoaoSouto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FitterJoaoSouto.h" ex="false" tool="3" flavor2="0">
@@ -280,6 +294,10 @@
       <item path="IntegratorMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="IntegratorMyImpl1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Integrator_ar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Integrator_ar.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Integrator_if.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -454,6 +472,10 @@
       </item>
       <item path="Attribute.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="BuildBonottosModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BuildBonottosModel.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="BuildSimpleModel1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BuildSimpleModel1.h" ex="false" tool="3" flavor2="0">
@@ -511,6 +533,10 @@
       </item>
       <item path="FactorOrInteractionContribution.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="FitterBonotto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FitterBonotto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FitterJoaoSouto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FitterJoaoSouto.h" ex="false" tool="3" flavor2="0">
@@ -536,6 +562,10 @@
       <item path="IntegratorMyImpl1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="IntegratorMyImpl1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Integrator_ar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Integrator_ar.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Integrator_if.h" ex="false" tool="3" flavor2="0">
       </item>

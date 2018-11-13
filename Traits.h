@@ -36,16 +36,19 @@
 #include "SamplerMyImpl1.h"
 #include "Sampler_BruFabJoa.h"
 #include "FitterMyImpl1.h"
+#include "FitterBonotto.h"
 //#include "FitterJoaoSouto.h"
 #include "ModelCheckerMyImpl1.h"
 #include "ParserMyImpl1.h"
 #include "IntegratorMyImpl1.h"
 #include "IntegratorDiogoImpl.h"
+#include "Integrator_ar.h"
 #include "HypothesisTesterMyImpl1.h"
 //#include "HypothesisTesterDiogo.h"
 #include "ModelPersistenceMyImpl1.h"
 #include "StatisticsMyImpl1.h"
 #include "StatisticsCancianImpl.h"
+#include "BuildBonottosModel.h"
 #include "BuildSimpleModel1.h"
 #include "TestInputAnalyserTools.h"
 #include "ProcessAnalyserMyImpl1.h"
@@ -57,7 +60,8 @@ struct Traits {
 
 template <> struct Traits<GenesysApplication_if> {
 	//typedef TestInputAnalyserTools Application;  
-	typedef BuildSimpleModel1 Application;  
+	// typedef BuildSimpleModel1 Application;
+	typedef BuildBonottosModel Application;
 };
 
 template <> struct Traits<Model> {
@@ -77,7 +81,8 @@ template <> struct Traits<Sampler_if> {
 };
 
 template <> struct Traits<Fitter_if> {
-	typedef FitterMyImpl1 Implementation;
+    typedef FitterBonotto Implementation;
+	// typedef FitterMyImpl1 Implementation;
     //typedef FitterJoaoSouto Implementation;
 };
 
@@ -104,6 +109,8 @@ template <> struct Traits<Statistics_if> {
 template <> struct Traits<Integrator_if> {
 	//typedef IntegratorMyImpl1 Implementation;
 	typedef IntegratorDiogoImpl Implementation;
+	// typedef Integrator_ar Implementation;
+    
 };
 
 template <> struct Traits<HypothesisTester_if> {
