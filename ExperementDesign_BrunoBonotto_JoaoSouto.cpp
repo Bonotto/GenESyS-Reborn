@@ -14,6 +14,8 @@
 #include "ExperementDesign_BrunoBonotto_JoaoSouto.h"
 #include "SimulationScenario.h"
 #include "Assign.h"
+
+#include <iostream>
 #include <map>
 #include <set>
 
@@ -66,11 +68,12 @@ std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>
 {
 	auto scenarios = _processAnalyser->getScenarios()->getList();
 	auto responses = _processAnalyser->getResponses()->getList();
+	auto controls = _processAnalyser->getControls()->getList();
 
 	std::map<SimulationControl*, std::map<double, double>> levels;
 
 	for (auto scenario : *scenarios)
-		for (auto control : *_processAnalyser->getControls()->getList())
+		for (auto control : *controls)
 			levels[control][scenario->getControlValue(control)] = 0;
 
 	for (auto l : levels) {
@@ -78,18 +81,18 @@ std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>
 		auto it = l.second.begin();
 
 		levels[control][it->first] = -1;
-		levels[control][(it++)->first] = 1;
+		levels[control][(++it)->first] = 1;
 	}
 
 	//! Build combination
 	std::set<std::set<SimulationControl*>> sets;
 	int k = _processAnalyser->getControls()->size();
 
-	for (auto control : *_processAnalyser->getControls()->getList())
+	for (auto control : *controls)
 		sets.insert({control});
 
 	while (sets.size() != total_combination(k))
-		for (auto control : *_processAnalyser->getControls()->getList())
+		for (auto control : *controls)
 			for (std::set<SimulationControl*> set : sets) {
 				set.insert(control);
 				sets.insert(set);

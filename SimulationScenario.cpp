@@ -48,11 +48,11 @@ std::string SimulationScenario::getModelFilename() const {
 
 double SimulationScenario::getResponseValue(SimulationResponse* value)
 {
-	return 0;
+	return value->get(this);
 }
 double SimulationScenario::getControlValue(SimulationControl* control)
 {
-	return 0;
+	return control->get(this);
 }
 void SimulationScenario::setControlValue(SimulationControl* control, double value)
 {

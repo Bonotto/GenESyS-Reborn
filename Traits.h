@@ -47,6 +47,7 @@
 #include "StatisticsMyImpl1.h"
 #include "StatisticsCancianImpl.h"
 #include "BuildSimpleModel1.h"
+#include "BuildExperimentDesignTester.h"
 #include "TestInputAnalyserTools.h"
 #include "ProcessAnalyserMyImpl1.h"
 #include "ExperimentDesignMyImpl1.h"
@@ -59,7 +60,8 @@ struct Traits {
 
 template <> struct Traits<GenesysApplication_if> {
 	//typedef TestInputAnalyserTools Application;  
-	typedef BuildSimpleModel1 Application;  
+//	typedef BuildSimpleModel1 Application;
+	typedef BuildExperimentDesignTester Application;  
 };
 
 template <> struct Traits<Model> {

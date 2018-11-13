@@ -23,12 +23,15 @@ ProcessAnalyserMyImpl1::~ProcessAnalyserMyImpl1() {
 }
 
 List<SimulationScenario*>* ProcessAnalyserMyImpl1::getScenarios() const {
+	return _scenarios;
 }
 
 List<SimulationControl*>* ProcessAnalyserMyImpl1::getControls() const {
+	return _controls;
 }
 
 List<SimulationResponse*>* ProcessAnalyserMyImpl1::getResponses() const {
+	return _responses;
 }
 
 List<SimulationControl*>* ProcessAnalyserMyImpl1::extractControlsFromModel(std::string modelFilename) const {

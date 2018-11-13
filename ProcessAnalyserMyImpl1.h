@@ -21,10 +21,16 @@
 
 class ProcessAnalyserMyImpl1: public ProcessAnalyser_if {
 public:
+	ProcessAnalyserMyImpl1(List<SimulationScenario*> *scenarios, List<SimulationControl*> *controls, List<SimulationResponse*> *responses):
+	_scenarios(scenarios), _controls(controls), _responses(responses) {}
 	ProcessAnalyserMyImpl1();
 	ProcessAnalyserMyImpl1(const ProcessAnalyserMyImpl1& orig);
 	~ProcessAnalyserMyImpl1();
+
 public:
+	List<SimulationScenario*> *_scenarios;
+	List<SimulationControl*> *_controls;
+	List<SimulationResponse*> *_responses;
 	List<SimulationScenario*>* getScenarios() const;
 	List<SimulationControl*>* getControls() const;
 	List<SimulationResponse*>* getResponses() const;

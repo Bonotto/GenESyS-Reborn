@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Assign.o \
 	${OBJECTDIR}/Attribute.o \
+	${OBJECTDIR}/BuildExperimentDesignTester.o \
 	${OBJECTDIR}/BuildSimpleModel1.o \
 	${OBJECTDIR}/CollectorDatafileCancianImpl.o \
 	${OBJECTDIR}/CollectorDatafileMyImpl1.o \
@@ -121,6 +122,11 @@ ${OBJECTDIR}/Attribute.o: Attribute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Attribute.o Attribute.cpp
+
+${OBJECTDIR}/BuildExperimentDesignTester.o: BuildExperimentDesignTester.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BuildExperimentDesignTester.o BuildExperimentDesignTester.cpp
 
 ${OBJECTDIR}/BuildSimpleModel1.o: BuildSimpleModel1.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

@@ -31,9 +31,10 @@ public:
 	bool calculateContributionAndCoefficients();
 	std::list<FactorOrInteractionContribution*>* getContributions() const;
 
-private:
+public:
 	double responses_avg;
 	ProcessAnalyser_if* _processAnalyser = new Traits<ProcessAnalyser_if>::Implementation();
+
 	std::list<FactorOrInteractionContribution*>* _contributions = new std::list<FactorOrInteractionContribution*>();
 
 	std::map<SimulationScenario*, std::map<FactorOrInteractionContribution*, double>> create_table();
